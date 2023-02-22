@@ -23,7 +23,7 @@ $timestamp = Get-Date -Format yyyy-MM-dd_HH-mm-ss
 $numericalData = [float]::Parse($data -replace '[gS\s]')/100
 
 # Multiply the numerical data by the factor
-$calculatedData = $numericalData * ($factor/100)
+$calculatedData = $numericalData / ($factor/100)
 
 # Append the data, timestamp and calculated data to the text file
 Add-Content -Path "results_scale1.txt" -Value "$timestamp $numericalData $calculatedData"
